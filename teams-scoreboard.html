@@ -1,0 +1,156 @@
+<html>
+<head>
+    <style>
+        body {
+  width: 100vw;
+  height: 100vh;
+  background: dimgray;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  position: relative;
+  margin:0px;
+  padding:0px;
+}
+header{
+    margin: 0px;
+    background: firebrick;
+    padding: 10px;
+}
+.main-container{
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.score-container{
+  position: relative;
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  width: 80%;
+  height: 40vh;
+  text-align: center;
+  align-items: center;
+  
+}
+.score-box{
+  border: 2px solid white;
+  background: firebrick;
+  width: 60%;
+  height: 30vh;
+  margin: auto;
+  border-radius: 8px;
+  font-size: 50px;
+  display: flex;
+}
+.score-text{
+  margin: auto;
+}
+#btn-container{
+  display: flex;
+  text-align: center;
+}
+.buttons-div{
+  margin: auto;
+}
+.numButton{
+  width: 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+    </style>
+</head>
+<body>
+  <div id="main-container">
+      <header><h1>2 Team Scoreboard</h1></header>
+        
+    <div class="score-container">
+      
+      <div class = "score-box" id="score-boxa">
+      <p class ="score-text" id="score-a"></p>
+      </div>
+      
+      <div class = "score-box" id="score-boxb">
+      <p class ="score-text" id="score-b"></p>
+      </div>
+      
+    </div>
+    
+    <div id="btn-container">
+    
+    <div class="buttons-div" id="aButtons">   
+      
+      <button type="button" id="btn-aPlus" class="numButton">
+      +</button>
+      <button type="button" id="btn-aMinus" class="numButton">
+      -</button>
+      </div>
+      
+    <div class="buttons-div" id="bButtons">   
+        <button type="button" id="btn-bPlus" class="numButton">
+        +</button>
+        <button type="button" id="btn-bMinus" class="numButton">
+        -</button>
+      </div>
+      
+    </div>
+    
+    <div id="results"></div>
+  </div>
+
+<script>
+    //Variables Declarations
+var results = document.getElementById('results');
+results.innerHTML = "Results Here";
+
+var scoreA = 0;
+var scoreB = 0;
+document.getElementById('score-a').innerHTML = scoreA;
+
+//Add score buttons functionality
+//TEAM A BUTTONS
+const btnAPlus = document.getElementById('btn-aPlus');
+btnAPlus.onclick = function() {incrementA()};
+
+const btnAMinus = document.getElementById('btn-aMinus');
+btnAMinus.onclick = function() {decreaseA()};
+
+function incrementA() {  
+ 	let currentScoreA = document.getElementById('score-a').innerHTML;
+  currentScoreA++;
+  document.getElementById('score-a').innerHTML = currentScoreA;
+  results.innerHTML = `Team A Scored`;
+}
+function decreaseA() {  
+ 	let currentScoreA = document.getElementById('score-a').innerHTML;
+  currentScoreA--;
+  document.getElementById('score-a').innerHTML = currentScoreA;
+  results.innerHTML = `Team A Lost a Point`;
+}
+
+//TEAM B BUTTONS
+const btnBPlus = document.getElementById('btn-bPlus');
+btnBPlus.onclick = function() {incrementB()};
+
+const btnBMinus = document.getElementById('btn-bMinus');
+btnBMinus.onclick = function() {decreaseB()};
+
+function incrementB() {  
+ 	let currentScoreB = document.getElementById('score-b').innerHTML;
+  currentScoreB++;
+  document.getElementById('score-b').innerHTML = currentScoreB;
+  results.innerHTML = `Team B Scored`;
+}
+function decreaseB() {  
+ 	let currentScoreB = document.getElementById('score-b').innerHTML;
+  currentScoreB--;
+  document.getElementById('score-b').innerHTML = currentScoreB;
+  results.innerHTML = `Team B Lost a Point`;
+}
+</script>
+
+</body>
+</html>
