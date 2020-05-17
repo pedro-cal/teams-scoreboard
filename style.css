@@ -1,0 +1,60 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background: dimgray;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    margin:0px;
+    padding:0px;
+  }
+  header{
+      margin: 0px;
+      background: firebrick;
+      padding: 10px;
+  }
+  .main-container{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+  .score-container{
+    position: relative;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    width: 80%;
+    height: 40vh;
+    text-align: center;
+    align-items: center;
+    
+  }
+  .score-box{
+    border: 2px solid white;
+    background: firebrick;
+    width: 60%;
+    height: 30vh;
+    margin: auto;
+    border-radius: 8px;
+    font-size: 50px;
+    display: flex;
+  }
+  .score-text{
+    margin: auto;
+  }
+  #btn-container{
+    display: flex;
+    text-align: center;
+  }
+  .buttons-div{
+    margin: auto;
+  }
+  .numButton{
+    width: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+  }
